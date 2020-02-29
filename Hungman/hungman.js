@@ -1,3 +1,4 @@
+// Html dökümanı üzerindeki gerekli elementler yakalandı
 const trial = document.querySelector("#trial");
 const word = document.querySelector("#row");
 const letter = document.querySelector("#letter");
@@ -8,13 +9,15 @@ const container = document.querySelector("#container");
 const words = ["beşiktaş", "javascript", "bilgisayar"];
 const size = words.length - 1;
 
+// Sayfa her yüklendiğinde aynı soru gelmemesi için aşağıdaki method sayesinde array
+// içerisinden sürekli farklı eleman gelmesi sağlandı
 const select = Math.round(Math.random() * size);
 const selectedWord = words[select];
-
 let trials = 9;
 
-
-
+// Fonksiyona gönderilen selected kelimesi'nin harf sayısına göre aşağıdaki fonksiyon
+// çalıştı ve word değişkeninin içerisine innerHTML methodu ile harf sayısı kadar
+// sütun satır içerisine oluşturuldu
 const getWord = (selected) => {
     let count = selected.length;
     for (let i = 0; i < count; i++) {
@@ -24,10 +27,15 @@ const getWord = (selected) => {
         </div>
          `
     }
+    // trial değişkeninin value'sine trials değişkeni tanımlandı kullanıcı kaç deneme
+    // hakkı kaldığını görebilsin diye
     trial.value = trials;
 }
 
-
+// Fonksiyona gönderilen findletter(harf) parametresi üzerinden fonksiyon işlem yapıyor
+// aranan harf kelime içerisinde yer alıyorsa querySelector ile harfin kelime
+// içerisinde bulunduğu yer yakalanır ve harf upperCase methodu kullanıldıktan
+// sonra oraya yazılır
 const findLetter = (findLetter) => {
     const size = selectedWord.length;
     for (let i = 0; i < size; i++) {
@@ -39,7 +47,9 @@ const findLetter = (findLetter) => {
     trial.value = trials;
 }
 
-
+// Eğer fonksiyona gönderilen val parametresi karakter uzunluğu 1 değilse kullanıcı
+// tek karakter girmemiştir ve fonksiyon çalışmaz. Daha sonra devam eden işlem bloğunda
+// bu sefer deneme hakkı kalmamışsa oyun başlamaz
 const getLetter = (val) => {
     if (val.length === 1) {
         if (trials > 0) {
@@ -54,8 +64,10 @@ const getLetter = (val) => {
     }
 }
 
-
-
+// Kullanıcının deneme hakkı bitmeden oyunun bittiğini anlamak için böyle bir fonksiyon
+// yazıldı bu fonksiyon yerine sıradaki kelimeyi getiren bir fonksiyonda yazılabilirdi
+// ilk kod bloğunda ekrandaki tüm sütunların içerisindeki değer letterArray içerisine
+// push methodu ile alındı
 const controller = () => {
     const size = selectedWord.length;
     let letterArray = [];
@@ -63,7 +75,9 @@ const controller = () => {
         target = `#harf${i}`
         letterArray.push(document.querySelector(target).innerText);
     }
-
+    // ikinci kod bloğunda count değişkeni tutuldu ve letterArray içerisindeki tüm 
+    // değerler döndürüldü eğer değer "" değilse count değişkeni 1 arttırıldı çünkü bu
+    // sayede ekrandaki kaç kutucuğun dolu olduğunu öğrenebiliriz
     let len = letterArray.length;
     let count = 0;
     for (let i = 0; i < len; i++) {
@@ -71,13 +85,16 @@ const controller = () => {
             count++;
         }
     }
+    // Eğer size yani kelimenin uzunluğu count değişkenine eşitse ekranda gösterilen tüm
+    // kutucuklar dolmuşdemektir ve bu aşamada oyun bitmelidir. Oyun sonu için ekleme
+    // yapacaksan buraya yapabilirsin
     if (size == count) {
         container.innerHTML = "";
         container.innerText = `!!  ${selectedWord.toUpperCase()}  !!`;
     }
 }
 
-
+// button değişkenine click event'i gerçekleştiğinde aşağıdaki kod bloğu çalışır
 button.addEventListener("click", () => {
     let value = input.value;
     getLetter(value);

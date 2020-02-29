@@ -3,15 +3,14 @@ const lottery = document.querySelector("#lottery");
 const buyTicketButton = document.querySelector("#buyTicketButton");
 const tryButton = document.querySelector("#tryButton");
 const price = document.querySelector("#price");
+
 const size = 10;
 let ticketNumbers, lotteryNumbers;
-
 
 const randomNumberCreator = () => {
     let value = Math.round(Math.random() * 9);
     return value;
 }
-
 
 const createTicketBox = () => {
     ticket.innerHTML = "";
@@ -19,7 +18,6 @@ const createTicketBox = () => {
         ticket.innerHTML += `<div id="box${i}" class="col border"></div>`;
     }
 }
-
 
 const getTicketNumber = () => {
     let ticketArray = [];
@@ -32,14 +30,12 @@ const getTicketNumber = () => {
     return ticketArray;
 }
 
-
 const createLotteryBox = () => {
     lottery.innerHTML = "";
     for (let i = 0; i < size; i++) {
         lottery.innerHTML += `<div id="boxx${i}" class="col border"></div>`;
     }
 }
-
 
 const getLotteryNumber = () => {
     let lotteryArray = [];
@@ -51,7 +47,6 @@ const getLotteryNumber = () => {
     }
     return lotteryArray;
 }
-
 
 const controlPrice = () => {
     let count = 0;
@@ -65,16 +60,12 @@ const controlPrice = () => {
     }
 }
 
-
-
 buyTicketButton.addEventListener("click", () => {
     let ticketArray = [];
     createTicketBox();
     ticketArray = getTicketNumber();
     ticketNumbers = ticketArray;
 });
-
-
 
 tryButton.addEventListener("click", () => {
     let award;
