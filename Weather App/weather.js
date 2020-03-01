@@ -14,7 +14,6 @@ const City = (obj) => {
 
     cloud.innerText =    "Cloud:        " + obj.weather[0].description.toUpperCase();
     wind.innerText =     "Wind:         " + obj.wind.speed;
-    cityCode.innerText = "City Code:    " + obj.cod;
     weather.innerText =  "Weather:      " + obj.weather[0].main.toUpperCase();
 }
 
