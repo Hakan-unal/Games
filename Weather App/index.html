@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <title>Weather App</title>
+    <style>
+        
+    </style>
+</head>
+
+
+<body>
+
+
+    <div id="container" class="container">
+
+        <div class="card my-3 bg-light w-50">
+
+            <div class="card-header bg-primary">
+                <p id="paragraph" class="text-center text-white display-4"> WEATHER APP</p>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"><i class="fas fa-temperature-low fa-5x"></i></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+
+                </div>
+            </div>
+
+            <div class="card-body">
+
+                <h5 class="card-title">City:</h5>
+                <select id="city">
+                    <option value="Berlin">Berlin</option>
+                    <option value="London">London</option>
+                    <option value="Paris">Paris</option>
+                    <option value="Amsterdam">Amsterdam</option>
+                    <option value="İstanbul" selected>İstanbul</option>
+                </select>
+
+
+                <div class="card-footer my-4">Weather: <p id="weather"></p>
+                    <div id="row" class="row">
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="weather.js"></script>
+    <script src="https://kit.fontawesome.com/02fca21eb9.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
