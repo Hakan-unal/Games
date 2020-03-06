@@ -12,9 +12,9 @@ const City = (obj) => {
     let cityCode = document.querySelector("#citycode");
     let weather = document.querySelector("#weather");
 
-    cloud.innerText =    "Cloud:        " + obj.weather[0].description.toUpperCase();
-    wind.innerText =     "Wind:         " + obj.wind.speed;
-    weather.innerText =  "Weather:      " + obj.weather[0].main.toUpperCase();
+    cloud.innerHTML = `<p><b>Cloud</b>:${obj.weather[0].description.toUpperCase()}</p>`;
+    wind.innerHTML =   `<p><b>Wind</b>:${obj.wind.speed}</p>` ;
+    weather.innerHTML = `<p><b>Weather</b>:${obj.weather[0].main.toUpperCase()}</p>`;
 }
 
 
