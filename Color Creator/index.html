@@ -12,45 +12,66 @@
             width: 150px;
             height: 150px;
         }
+
+        .box {
+            width: 300px;
+            height: 30px;
+        }
     </style>
+
 </head>
 
 <body>
     <table class="table">
-        <caption>COLOR CREATOR</caption>
+        <caption id="colorName"></caption>
 
         <thead class="bg-dark text-light">
+
             <tr>
                 <th>Range</th>
+                <th>Color Name</th>
                 <th>Color</th>
                 <th>Result</th>
             </tr>
+
         </thead>
 
         <tbody>
+
             <tr>
                 <td>
-                    <p>0<input id="red" class="form-control-range w-75 d-inline" type="range" min="0" max="100">100</p>
+                    <p>0<input id="red" class="form-control-range w-75 d-inline" type="range" min="0" max="255">255</p>
                 </td>
                 <td class="text-danger">RED</td>
+                <td>
+                    <div class="box" id="redBox"></div>
+                </td>
                 <td rowspan="4">
                     <div id="result"></div>
                 </td>
             </tr>
+
             <tr>
                 <td>
-                    <p>0<input id="blue" class="form-control-range w-75 d-inline" type="range" min="0" max="100">100</p>
+                    <p>0<input id="blue" class="form-control-range w-75 d-inline" type="range" min="0" max="255">255</p>
                 </td>
                 <td class="text-info">BLUE</td>
-
+                <td>
+                    <div class="box" id="blueBox"></div>
+                </td>
             </tr>
+
             <tr>
                 <td>
-                    <p>0<input id="green" class="form-control-range w-75 d-inline" type="range" min="0" max="100">100
+                    <p>0<input id="green" class="form-control-range w-75 d-inline" type="range" min="0" max="255">255
                     </p>
                 </td>
                 <td class="text-success">GREEN</td>
+                <td>
+                    <div class="box" id="greenBox"></div>
+                </td>
             </tr>
+
         </tbody>
     </table>
 
