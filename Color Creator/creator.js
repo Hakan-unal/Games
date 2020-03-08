@@ -29,6 +29,8 @@ red.addEventListener("input", (event) => {
     creator();
 });
 
+creator();
+
 
 
 
