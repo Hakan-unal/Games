@@ -27,6 +27,7 @@ const getWord = (selected) => {
         </div>
          `
     }
+    
     // trial değişkeninin value'sine trials değişkeni tanımlandı kullanıcı kaç deneme
     // hakkı kaldığını görebilsin diye
     trial.value = trials;
@@ -75,6 +76,7 @@ const controller = () => {
         target = `#harf${i}`
         letterArray.push(document.querySelector(target).innerText);
     }
+
     // ikinci kod bloğunda count değişkeni tutuldu ve letterArray içerisindeki tüm 
     // değerler döndürüldü eğer değer "" değilse count değişkeni 1 arttırıldı çünkü bu
     // sayede ekrandaki kaç kutucuğun dolu olduğunu öğrenebiliriz
@@ -85,6 +87,7 @@ const controller = () => {
             count++;
         }
     }
+
     // Eğer size yani kelimenin uzunluğu count değişkenine eşitse ekranda gösterilen tüm
     // kutucuklar dolmuşdemektir ve bu aşamada oyun bitmelidir. Oyun sonu için ekleme
     // yapacaksan buraya yapabilirsin

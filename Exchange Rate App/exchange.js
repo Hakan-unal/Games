@@ -29,6 +29,7 @@ const calculate = () => {
 // değişiklik olursa calculate fonksiyonu çağırılır
 currencyOne.addEventListener('change', calculate);
 currencyTwo.addEventListener('change', calculate);
+
 // inputOne ve inputTwo değişkenleri ile tanımlanan html elementi üzerinde input değeri
 // girilmesi halinde calculate fonksiyonu çalışır
 inputOne.addEventListener('input', calculate);

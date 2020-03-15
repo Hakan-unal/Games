@@ -58,10 +58,3 @@ red.addEventListener("input", (event) => {
 });
 
 creator();
-
-
-
-
-
-
-
