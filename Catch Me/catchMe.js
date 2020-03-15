@@ -41,5 +41,5 @@ const gameStart = () => {
     }, (time));
 }
 
-// Fonksiyon sürekli çağırıldı
+// Fonksiyon çağırıldı
 gameStart();
