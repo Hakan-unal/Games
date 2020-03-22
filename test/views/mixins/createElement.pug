@@ -1,0 +1,13 @@
+mixin createElement(personel)
+    .col-md-4
+        .card.my-3
+            .card-header #{personel.name} #{personel.surname}
+            .card-body
+                h4.card-title
+                a(href="#") #{personel.department}
+                                
+                p.card-text.pt-2 #{personel.email}  
+                            
+            .card-footer.bg-dark
+                small.text-light #{personel.password}
+                button#edit.mx-5 Edit
