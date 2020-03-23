@@ -1,0 +1,56 @@
+const title = document.querySelector("#title");
+const footer = document.querySelector("#footer");
+const body = document.querySelector("#body");
+const xhr = new XMLHttpRequest();
+
+
+
+
+const display = (obj) => {
+    let list = document.createElement('select');
+    list.setAttribute('id', 'covid');
+
+    obj.response.forEach(element => {
+        list.innerHTML += `<option id="${element.country}" value="${element.country}">${element.country}</option>`;
+    });
+    title.appendChild(list);
+    let covid = document.querySelector("#covid");
+    covid.addEventListener("input", (event) => {
+        body.innerHTML = "";
+        obj.response.forEach(element => {
+            if (event.target.value === element.country) {
+                let ul = document.createElement("ul");
+                ul.setAttribute("id", "ul");
+                ul.innerHTML = `
+                <li><b>NEW:</b>${element.cases.new}</li>
+                <li><b>TOTAL:</b>${element.cases.total}</li>
+                <li><b>DEATHS:</b>${element.deaths.total}</li>
+                `;
+                body.appendChild(ul);
+                footer.innerText = `LAST UPDATED: ${element.day}`
+            }
+        });
+    });
+}
+
+
+const calculate = () => {
+    let url = `https://covid-193.p.rapidapi.com/statistics`;
+
+    xhr.open(`GET`, url, true);
+    xhr.withCredentials = true;
+    xhr.setRequestHeader("x-rapidapi-host", "covid-193.p.rapidapi.com");
+    xhr.setRequestHeader("x-rapidapi-key", "b9b2c05cfamsh40e71d540d40b11p15e7d7jsnb566767fd57d");
+
+    xhr.onload = function () {
+
+        if (this.status === 200) {
+            const text = JSON.parse(this.responseText);
+            display(text);
+        }
+    }
+    xhr.send();
+}
+
+
+calculate();
