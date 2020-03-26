@@ -6,13 +6,8 @@ include mixins/createElement
 
 block content
     .row
-        if personels.length > 0
+        if personels !== null
             each personel in personels
                 +createElement(personel)
         else
             h1 No Products
-
-
-
-
-

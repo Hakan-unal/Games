@@ -10,7 +10,7 @@ class User {
         this.email = obj.email;
         this.password = obj.password;
     }
-    saveUser = () => {
+    saveUser(){
         let list;
         if (localStorage.getItem('personels') == null) {
             list = [];
