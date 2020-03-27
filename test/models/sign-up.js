@@ -4,13 +4,14 @@ const localStorage = new LocalStorage('./scratch');
 
 class User {
     constructor(obj) {
+        this.id = Math.round(Math.random() * 10000).toString();
         this.name = obj.name;
         this.surname = obj.surname;
         this.department = obj.department;
         this.email = obj.email;
         this.password = obj.password;
     }
-    saveUser(){
+    saveUser() {
         let list;
         if (localStorage.getItem('personels') == null) {
             list = [];

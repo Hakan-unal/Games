@@ -19,8 +19,10 @@ app.use(userRoute);
 app.use(errorController.display404Page);
 
 
-
-
-
-
-app.listen(port, (error) => { console.log(`Listen ${port} port ${error}`); });
+app.listen(port, (error) => {
+    if (error) {
+        console.log(`${error}`);
+    } else {
+        console.log(`Listen port: ${port} `);
+    }
+});
