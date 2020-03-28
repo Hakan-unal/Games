@@ -1,7 +1,6 @@
 const LocalStorage = require('node-localstorage').LocalStorage;
 const localStorage = new LocalStorage('./scratch');
 
-
 class User {
     constructor(obj) {
         this.id = Math.round(Math.random() * 10000).toString();
