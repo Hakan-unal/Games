@@ -18,7 +18,6 @@ app.use('/admin', adminRoute);
 app.use(userRoute);
 app.use(errorController.display404Page);
 
-
 app.listen(port, (error) => {
     if (error) {
         console.log(`${error}`);
@@ -26,3 +25,5 @@ app.listen(port, (error) => {
         console.log(`Listen port: ${port} `);
     }
 });
+
+

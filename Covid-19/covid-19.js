@@ -7,13 +7,14 @@ const xhr = new XMLHttpRequest();
 
 
 const display = (obj) => {
-    let list = document.createElement('select');
-    list.setAttribute('id', 'covid');
+    let select = document.createElement('select');
+    select.setAttribute('id', 'covid');
+    select.setAttribute("class", "custom-select");
 
     obj.response.forEach(element => {
-        list.innerHTML += `<option id="${element.country}" value="${element.country}">${element.country}</option>`;
+        select.innerHTML += `<option id="${element.country}" value="${element.country}">${element.country}</option>`;
     });
-    title.appendChild(list);
+    title.appendChild(select);
     let covid = document.querySelector("#covid");
     covid.addEventListener("input", (event) => {
         body.innerHTML = "";
