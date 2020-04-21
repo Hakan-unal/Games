@@ -69,21 +69,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const randomSelection = () => {
-        let liste = JSON.parse(localStorage.getItem("items"));
-        selection(liste);
+        console.log(list.children);
+        
+        let sayac = Number(range.value);
+        randomButton.setAttribute("disabled", "");
+
+        changeColorTime = setInterval(selection, 1000);
+
+        setTimeout(() => {
+            clearInterval(changeColorTime);
+            randomButton.removeAttribute("disabled");
+            let index = Math.round(Math.random() * (list.children.length - 1));
+            setTimeout(() => {
+                list.children[index].setAttribute("class", "list-group-item bg-warning");
+            }, 1000)
+        }, sayac);
+
     }
 
 
-    const selection = (liste) => {
+    const selection = () => {
+        let index = Math.round(Math.random() * (list.children.length - 1));
+        list.children[index].setAttribute("class", "list-group-item bg-warning");
+        setTimeout(() => {
+            list.children[index].setAttribute("class", "list-group-item bg-white");
+        }, 900)
 
-        if (liste !== null) {
-            let value = Math.round(Math.random() * (liste.length - 1));
-            console.log(value);
-        }
     }
 
 
     displayList(JSON.parse(localStorage.getItem("items")));
+
 
 
 
