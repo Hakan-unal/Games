@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         rangeDisplay.value = range.value;
     }
 
-    
+
     const addLocalStorage = () => {
         let item, liste;
         item = inputBox.value;
@@ -40,8 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
             liste.forEach((element, index) => {
                 let li = document.createElement("li");
                 li.setAttribute("class", "list-group-item");
-                li.innerText = index + 1 + ".  " + element;
-                index++;
+                li.innerHTML = `
+
+                ${index + 1}.  ${element}<input type="button" id="${index}" value="Delete" class="btn btn-outline-dark float-right">
+                
+                `;
                 list.appendChild(li);
             });
         }
@@ -51,6 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const deleteList = () => {
         localStorage.setItem("items", null);
         list.innerText = "";
+    }
+
+
+    const deleteElement = (event) => {
+        if (event.target.value === "Delete") {
+            let id = Number(event.target.id);
+            let liste = JSON.parse(localStorage.getItem("items"));
+            liste.splice(id, 1);
+            localStorage.setItem("items", JSON.stringify(liste));
+            displayList(liste);
+        }
     }
 
 
@@ -80,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     deleteAll.addEventListener("click", deleteList);
     randomButton.addEventListener("click", randomSelection);
     range.addEventListener("input", changeRange);
-
+    list.addEventListener("click", deleteElement);
 });
 
 
