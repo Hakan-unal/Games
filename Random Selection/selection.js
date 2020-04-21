@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const range = document.querySelector("#range");
 
 
+
+    const changeRange = () => {
+        rangeDisplay.value = range.value;
+    }
+
+    
     const addLocalStorage = () => {
         let item, liste;
         item = inputBox.value;
@@ -29,28 +35,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const displayList = (liste) => {
-        list.innerText = "";
-        liste.forEach((element, index) => {
-            let li = document.createElement("li");
-            li.setAttribute("class", "list-group-item");
-            li.innerText = index + 1 + ".  " + element;
-            index++;
-            list.appendChild(li);
-        });
+        if (liste !== null) {
+            list.innerText = "";
+            liste.forEach((element, index) => {
+                let li = document.createElement("li");
+                li.setAttribute("class", "list-group-item");
+                li.innerText = index + 1 + ".  " + element;
+                index++;
+                list.appendChild(li);
+            });
+        }
     }
 
 
-    
     const deleteList = () => {
         localStorage.setItem("items", null);
         list.innerText = "";
     }
 
 
+    const randomSelection = () => {
+        let liste = JSON.parse(localStorage.getItem("items"));
+        selection(liste);
+    }
+
+
+    const selection = (liste) => {
+
+        if (liste !== null) {
+            let value = Math.round(Math.random() * (liste.length - 1));
+            console.log(value);
+        }
+    }
+
+
+    displayList(JSON.parse(localStorage.getItem("items")));
+
+
+
+
+
+
     addButton.addEventListener("click", addLocalStorage);
     deleteAll.addEventListener("click", deleteList);
-
-
+    randomButton.addEventListener("click", randomSelection);
+    range.addEventListener("input", changeRange);
 
 });
 
