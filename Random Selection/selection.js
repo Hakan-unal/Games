@@ -107,7 +107,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     addButton.addEventListener("click", addLocalStorage);
     deleteAll.addEventListener("click", deleteList);
-    randomButton.addEventListener("click", randomSelection);
+    randomButton.addEventListener("click", () => {
+        if (localStorage.getItem("items") !== "null") {
+            console.log(localStorage.getItem("items"))
+            randomSelection();
+        }
+    });
     range.addEventListener("input", changeRange);
     list.addEventListener("click", deleteElement);
 
