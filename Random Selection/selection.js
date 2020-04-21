@@ -69,8 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const randomSelection = () => {
-        console.log(list.children);
-        
+        let count = list.childElementCount;
+        for (let i = 0; i < count; i++) {
+            list.children[i].setAttribute("class", "list-group-item bg-white");
+        }
+
+
         let sayac = Number(range.value);
         randomButton.setAttribute("disabled", "");
 
@@ -81,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
             randomButton.removeAttribute("disabled");
             let index = Math.round(Math.random() * (list.children.length - 1));
             setTimeout(() => {
-                list.children[index].setAttribute("class", "list-group-item bg-warning");
+                list.children[index].setAttribute("class", "list-group-item bg-success");
             }, 1000)
         }, sayac);
 
@@ -98,11 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    displayList(JSON.parse(localStorage.getItem("items")));
-
-
-
-
 
 
 
@@ -111,6 +110,12 @@ document.addEventListener("DOMContentLoaded", () => {
     randomButton.addEventListener("click", randomSelection);
     range.addEventListener("input", changeRange);
     list.addEventListener("click", deleteElement);
+
+
+
+
+    displayList(JSON.parse(localStorage.getItem("items")));
+
 });
 
 
