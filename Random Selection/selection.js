@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let index = Math.round(Math.random() * (list.children.length - 1));
             setTimeout(() => {
                 list.children[index].setAttribute("class", "list-group-item bg-success");
-            }, 1000)
+            }, 501)
         }, sayac);
 
     }
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         list.children[index].setAttribute("class", "list-group-item bg-warning");
         setTimeout(() => {
             list.children[index].setAttribute("class", "list-group-item bg-white");
-        }, 900)
+        }, 500)
 
     }
 
@@ -109,7 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
     deleteAll.addEventListener("click", deleteList);
     randomButton.addEventListener("click", () => {
         if (localStorage.getItem("items") !== "null") {
-            console.log(localStorage.getItem("items"))
             randomSelection();
         }
     });
