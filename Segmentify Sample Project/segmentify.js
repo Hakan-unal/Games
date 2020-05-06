@@ -152,6 +152,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+    
     getData1(index);
     getData2(0);
     getData3(0);
@@ -161,15 +163,5 @@ document.addEventListener("DOMContentLoaded", () => {
         getData2(Math.round(Math.random() * 26));
 
     }, 2500);
-
-
-
-
-
-
-    // Second Widget
-
-
-
 
 })
