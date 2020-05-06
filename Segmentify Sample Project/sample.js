@@ -1,17 +1,31 @@
-const getProductsData = () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-    return fetch('./sample_products.json')
-        .then(response => {
-            return response.json()
-        }).then(text => {
-            console.log(text);
+    const fetchProductsData = () => {
+
+        return fetch('./sample_products.json')
+            .then(response => {
+                return response.json()
+            }).then(text => {
+                return text
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+
+
+    const getData = () => {
+        fetchProductsData().then(text => {
+            console.log(text.products);
         })
-        .catch(error => {
-            console.log(error);
-        })
-}
+    }
+
+    getData()
 
 
-getProductsData().then(products => {
-    console.log(products);
+
+
+
+
 })
