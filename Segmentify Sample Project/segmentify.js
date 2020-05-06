@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // First Widget
 
     const contentRow = document.querySelector("#contentrow");
     const cardDeck = document.querySelector("#carddeck");
@@ -153,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    
+
     getData1(index);
     getData2(0);
     getData3(0);
