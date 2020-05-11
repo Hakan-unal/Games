@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/02fca21eb9.js" crossorigin="anonymous"></script>
 
     <title>Segmentify</title>
 </head>
@@ -15,7 +16,7 @@
 
 
 
-    <!-- First Widget Start-->
+    <!-- First Widget-->
     <div class="h1 text-center">First Widget</div>
 
     <div class="row">
@@ -36,42 +37,66 @@
 
 
 
-    <br><br><br><br><br>
+    <br><br>
 
 
-    <!-- Second Widget Start-->
+    <!-- Second Widget-->
     <div class="h1 text-center">Second Widget</div>
 
 
-
-    <div id="carddeck" class="card-deck">
+    <div class="row">
+        <div class="col-1">
+            <button id="leftclick2" class="btn btn-primary">
+                < </button>
+        </div>
+        <div class="col-10">
+            <div id="carddeck" class="card-deck">
+            </div>
+        </div>
+        <div class="col-1">
+            <button id="rightclick2" class="btn btn-primary">
+                ></button>
+        </div>
+    </div>
 
 
 
     </div>
 
 
-    <br><br><br><br><br><br>
+    <br><br>
 
-    <!-- Third Widget Start-->
+    <!-- Third Widget-->
     <div class="h1 text-center">Third Widget</div>
 
-    <marquee width="175%" behavior="scroll" scrollamount="15">
-        <div id="widget3" class="row">
-            
+    <div class="row">
+        <div class="col-1">
+            <button id="leftclick3" class="btn btn-primary">
+                < </button>
         </div>
-    </marquee>
+        <div class="col-10">
+            <div id="widget3" class="card-group"></div>
+        </div>
+        <div class="col-1">
+            <button id="rightclick3" class="btn btn-primary">
+                ></button>
+        </div>
+    </div>
 
 
 
 
 
 
-    <br><br><br><br><br><br>    <br><br><br><br><br><br>     <br><br><br><br><br><br>    <br><br><br><br><br><br>
+
+    <br><br><br><br><br><br>
 
 
 
-    <script src="segmentify.js"></script>
+    <script src="widget1.js"></script>
+    <script src="widget2.js"></script>
+    <script src="widget3.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
