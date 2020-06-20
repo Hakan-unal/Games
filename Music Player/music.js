@@ -2,8 +2,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const icon = document.querySelector("#icon");
     const audio = document.querySelector("#audio");
+    const backwardIcon = document.querySelector("#backwardIcon");
+    const playpauseIcon = document.querySelector("#playpauseIcon");
+    const forwardIcon = document.querySelector("#forwardIcon");
 
 
+    playpauseIcon.addEventListener("click", () => {
+
+        if (playpauseIcon.className === "far fa-pause-circle fa-3x") {
+            playpauseIcon.setAttribute("class", "far fa-play-circle fa-3x");
+        } else if (playpauseIcon.className === "far fa-play-circle fa-3x") {
+            playpauseIcon.setAttribute("class", "far fa-pause-circle fa-3x");
+
+        }
+    })
 
     audio.addEventListener("play", () => {
         icon.setAttribute("class", "fab fa-napster fa-5x fa-spin")
