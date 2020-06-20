@@ -11,20 +11,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (playpauseIcon.className === "far fa-pause-circle fa-3x") {
             playpauseIcon.setAttribute("class", "far fa-play-circle fa-3x");
+            audio.pause();
         } else if (playpauseIcon.className === "far fa-play-circle fa-3x") {
             playpauseIcon.setAttribute("class", "far fa-pause-circle fa-3x");
+            audio.play();
 
         }
     })
 
     audio.addEventListener("play", () => {
-        icon.setAttribute("class", "fab fa-napster fa-5x fa-spin")
+        icon.setAttribute("class", "fab fa-napster fa-6x fa-spin")
         console.log(audio.duration);
         console.log(audio.currentTime)
     })
 
     audio.addEventListener("pause", () => {
-        icon.setAttribute("class", "fab fa-napster fa-5x")
+        icon.setAttribute("class", "fab fa-napster fa-6x")
     })
 })
 
