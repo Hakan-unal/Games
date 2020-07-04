@@ -15,29 +15,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const songIndex = 0;
 
 
-    backwardIcon.addEventListener(() => {
+    backwardIcon.addEventListener("click", () => {
         --songIndex
         if (songIndex === -1) {
             songIndex = 2;
             audio.setAttribute("src", `${musics[songIndex]}`);
             playpauseIcon.setAttribute("class", "far fa-pause-circle fa-3x");
             audio.play();
-        }else{
+        } else {
             audio.setAttribute("src", `${musics[songIndex]}`);
             playpauseIcon.setAttribute("class", "far fa-pause-circle fa-3x");
-            audio.play(); 
+            audio.play();
         }
     })
 
 
     forwardIcon.addEventListener("click", () => {
         ++songIndex
-        if(songIndex ===3 ){
+        if (songIndex === 3) {
             songIndex = 0;
             audio.setAttribute("src", `${musics[songIndex]}`);
             playpauseIcon.setAttribute("class", "far fa-pause-circle fa-3x");
             audio.play();
-        }else{
+        } else {
             audio.setAttribute("src", `${musics[songIndex]}`);
             playpauseIcon.setAttribute("class", "far fa-pause-circle fa-3x");
             audio.play();
@@ -47,14 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     musicListButton1.addEventListener("click", (event) => {
-        audio.setAttribute("src", `${musics[songIndex]}`);
+        audio.setAttribute("src", `${musics[0]}`);
         playpauseIcon.setAttribute("class", "far fa-pause-circle fa-3x");
         audio.play();
         event.preventDefault();
     })
 
     musicListButton2.addEventListener("click", (event) => {
-        audio.setAttribute("src", `${musics[songIndex]}`);
+        audio.setAttribute("src", `${musics[1]}`);
         playpauseIcon.setAttribute("class", "far fa-pause-circle fa-3x");
         audio.play();
         event.preventDefault();
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     musicListButton3.addEventListener("click", (event) => {
-        audio.setAttribute("src", `${musics[songIndex]}`);
+        audio.setAttribute("src", `${musics[2]}`);
         playpauseIcon.setAttribute("class", "far fa-pause-circle fa-3x");
 
         audio.play();
