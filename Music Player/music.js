@@ -11,27 +11,58 @@ document.addEventListener("DOMContentLoaded", () => {
     const musicListButton3 = document.querySelector("#musicListButton3");
     const musicSource = document.querySelector("#musicSource")
 
+    const musics = ["music/cennet.mp3", "music/summer.mp3", "music/ukulele.mp3"]
+    const songIndex = 0;
+
+
+    backwardIcon.addEventListener(() => {
+        --songIndex
+        if (songIndex === -1) {
+            songIndex = 2;
+            audio.setAttribute("src", `${musics[songIndex]}`);
+            playpauseIcon.setAttribute("class", "far fa-pause-circle fa-3x");
+            audio.play();
+        }else{
+            audio.setAttribute("src", `${musics[songIndex]}`);
+            playpauseIcon.setAttribute("class", "far fa-pause-circle fa-3x");
+            audio.play(); 
+        }
+    })
+
+
+    forwardIcon.addEventListener("click", () => {
+        ++songIndex
+        if(songIndex ===3 ){
+            songIndex = 0;
+            audio.setAttribute("src", `${musics[songIndex]}`);
+            playpauseIcon.setAttribute("class", "far fa-pause-circle fa-3x");
+            audio.play();
+        }else{
+            audio.setAttribute("src", `${musics[songIndex]}`);
+            playpauseIcon.setAttribute("class", "far fa-pause-circle fa-3x");
+            audio.play();
+        }
+
+    })
 
 
     musicListButton1.addEventListener("click", (event) => {
-        musicSource.setAttribute("src", "music/cennet.mp3");
+        audio.setAttribute("src", `${musics[songIndex]}`);
         playpauseIcon.setAttribute("class", "far fa-pause-circle fa-3x");
-
         audio.play();
         event.preventDefault();
     })
 
     musicListButton2.addEventListener("click", (event) => {
-        musicSource.setAttribute("src", "music/summer.mp3");
+        audio.setAttribute("src", `${musics[songIndex]}`);
         playpauseIcon.setAttribute("class", "far fa-pause-circle fa-3x");
-
         audio.play();
         event.preventDefault();
 
     })
 
     musicListButton3.addEventListener("click", (event) => {
-        musicSource.setAttribute("src", "music/ukulele.mp3");
+        audio.setAttribute("src", `${musics[songIndex]}`);
         playpauseIcon.setAttribute("class", "far fa-pause-circle fa-3x");
 
         audio.play();
