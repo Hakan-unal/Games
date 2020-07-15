@@ -3,14 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Man Elements
     const manWeight = document.querySelector("#manWeight");
     const manHeight = document.querySelector("#manHeight");
-    const manResultButton = document.querySelector("#manResultButton");
     const manResult = document.querySelector("#manResult");
     const manForm = document.querySelector("#manForm");
 
     // Women Elements
     const womanWeight = document.querySelector("#womanWeight");
     const womanHeight = document.querySelector("#womanHeight");
-    const womanResultButton = document.querySelector("#womanResultButton");
     const womanResult = document.querySelector("#womanResult");
     const womenForm = document.querySelector("#womanForm");
 
